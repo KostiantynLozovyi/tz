@@ -1,11 +1,11 @@
 import { TextField } from "@mui/material";
 import { ChangeEvent } from "react";
 
-import "./style.scss"
+import "./style.scss";
 
 interface IProps {
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  value : string;
+  value: string;
 }
 
 export default function MyInput({ handleChange, value }: IProps) {
@@ -17,7 +17,7 @@ export default function MyInput({ handleChange, value }: IProps) {
         label="Filter"
         variant="standard"
         onChange={handleChange}
-        sx={{mb: 5}}
+        sx={{ mb: 5 }}
       />
     </>
   );

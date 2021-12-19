@@ -16,8 +16,8 @@ export interface IInitialState {
   articles: IDefaultState;
 }
 
-const initialState : IInitialState = {
-  articles : defaultState,
+const initialState: IInitialState = {
+  articles: defaultState,
 };
 
 const store = createStore(

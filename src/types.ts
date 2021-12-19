@@ -3,11 +3,12 @@ import rootReducer from "./redux/rootReducer";
 export type RootState = ReturnType<typeof rootReducer>;
 
 export interface IArticleItem {
-  title: string;
-  description: string;
-  source : {
-    id : string
+  title: any;
+  titleText: string;
+  description: any;
+  source: {
+    id: string
   };
-  urlToImage : string;
-  content : string;
+  urlToImage: string;
+  content: string;
 }

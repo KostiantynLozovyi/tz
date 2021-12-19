@@ -1,21 +1,27 @@
-import { Button, Container, Paper, Typography } from '@mui/material'
-import { Link, useLocation } from 'react-router-dom';
+import { Button, Container, Paper, Typography } from "@mui/material";
+import { Link, useLocation } from "react-router-dom";
 
 export default function ContentText() {
-    const location = useLocation(); 
-    const { title, content, urlToImage } = location.state;
+  const location = useLocation();
+  const { titleText, content, urlToImage } = location.state;
 
   return (
     <div>
-      <img style={{
-        width: '100%',
-        maxHeight: '200px',
-        objectFit: 'cover'
-      }} alt="1" src={urlToImage} />
-      <Container sx={{
-        position: 'absolute',
-        top: 20
-      }}>
+      <img
+        style={{
+          width: "100%",
+          maxHeight: "200px",
+          objectFit: "cover",
+        }}
+        alt="1"
+        src={urlToImage}
+      />
+      <Container
+        sx={{
+          position: "absolute",
+          top: 20,
+        }}
+      >
         <Paper
           sx={{
             marginTop: 10,
@@ -28,7 +34,7 @@ export default function ContentText() {
           variant="elevation"
           elevation={3}
         >
-          <Typography variant="h6">{title}</Typography>
+          <Typography variant="h6">{titleText}</Typography>
           <Typography
             sx={{
               marginTop: 2,
