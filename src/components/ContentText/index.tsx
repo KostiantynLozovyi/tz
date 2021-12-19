@@ -6,7 +6,7 @@ export default function ContentText() {
   const { titleText, content, urlToImage } = location.state;
 
   return (
-    <div>
+    <>
       <img
         style={{
           width: "100%",
@@ -16,12 +16,14 @@ export default function ContentText() {
         alt="1"
         src={urlToImage}
       />
-      <Container
-        sx={{
-          position: "absolute",
-          top: 20,
-        }}
-      >
+        <Container
+          sx={{
+            position: "absolute",
+            top: 20,
+            left: '50%',
+            transform: 'translate(-50%, 0)'
+          }}
+        >
         <Paper
           sx={{
             marginTop: 10,
@@ -62,6 +64,6 @@ export default function ContentText() {
           </Button>
         </Link>
       </Container>
-    </div>
+    </>
   );
 }
