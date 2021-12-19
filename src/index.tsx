@@ -9,7 +9,6 @@ import thunk from "redux-thunk";
 
 import App from "./App";
 
-import "./index.scss";
 import rootReducer from "./redux/rootReducer";
 
 export interface IInitialState {

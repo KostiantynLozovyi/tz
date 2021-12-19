@@ -1,8 +1,6 @@
 import { TextField } from "@mui/material";
 import { ChangeEvent } from "react";
 
-import "./style.scss";
-
 interface IProps {
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
   value: string;

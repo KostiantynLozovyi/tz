@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { IArticleItem } from "../../types";
-import "./style.scss";
 
 export default function ArticleItem({
   title,

@@ -8,8 +8,6 @@ import ArticleItem from "../ArticleItem";
 import Loader from "../Loader";
 import MyInput from "../MyInput";
 
-import "./style.scss";
-
 export default function ArticlesList() {
   const [value, setValue] = useState<string>("");
   const [loader, setLoader] = useState<boolean>(false);
