@@ -21,7 +21,7 @@ export function fetchTasks() {
     try {
       const response = await fetch(URL);
       const data = await response.json();
-      dispatch(getArticles(data.articles))
+      dispatch(getArticles(data))
     } catch (error) {
     }
   };

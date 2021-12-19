@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 
 export default function ContentText() {
   const location = useLocation();
-  const { titleText, content, urlToImage } = location.state;
+  const { titleText, summary, imageUrl } = location.state;
 
   return (
     <>
@@ -14,16 +14,16 @@ export default function ContentText() {
           objectFit: "cover",
         }}
         alt="1"
-        src={urlToImage}
+        src={imageUrl}
       />
-        <Container
-          sx={{
-            position: "absolute",
-            top: 20,
-            left: '50%',
-            transform: 'translate(-50%, 0)'
-          }}
-        >
+      <Container
+        sx={{
+          position: "absolute",
+          top: 20,
+          left: "50%",
+          transform: "translate(-50%, 0)",
+        }}
+      >
         <Paper
           sx={{
             marginTop: 10,
@@ -42,7 +42,7 @@ export default function ContentText() {
               marginTop: 2,
             }}
           >
-            {content}
+            {summary}
           </Typography>
         </Paper>
         <Link

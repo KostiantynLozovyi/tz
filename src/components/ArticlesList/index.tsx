@@ -56,7 +56,7 @@ export default function ArticlesList() {
     const filtered = data.filter(
       (item) =>
         item.title.toLowerCase().includes(value.toLowerCase()) ||
-        item.description.toLowerCase().includes(value.toLowerCase())
+        item.summary.toLowerCase().includes(value.toLowerCase())
     );
     setFilteredData(filtered);
   }, [data, value]);
@@ -80,9 +80,9 @@ export default function ArticlesList() {
                 key={index}
                 title={getHighlightedText(item.title, value)}
                 titleText={item.title}
-                description={getHighlightedText(item.description, value)}
-                source={item.source}
-                urlToImage={item.urlToImage}
+                summaryDesc={getHighlightedText(item.summary, value)}
+                summary={item.summary}
+                imageUrl={item.imageUrl}
                 content={item.content}
               />
             ))

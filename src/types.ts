@@ -5,10 +5,8 @@ export type RootState = ReturnType<typeof rootReducer>;
 export interface IArticleItem {
   title: any;
   titleText: string;
-  description: any;
-  source: {
-    id: string
-  };
-  urlToImage: string;
+  summary: string,
+  summaryDesc: any;
+  imageUrl: string;
   content: string;
 }

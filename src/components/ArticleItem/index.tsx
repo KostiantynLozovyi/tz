@@ -13,9 +13,9 @@ import { IArticleItem } from "../../types";
 export default function ArticleItem({
   title,
   titleText,
-  description,
-  urlToImage,
-  content,
+  summaryDesc,
+  imageUrl,
+  summary,
 }: IArticleItem) {
   return (
     <Grid item xs={6} md={4}>
@@ -24,7 +24,7 @@ export default function ArticleItem({
           component="img"
           width="100"
           height="200"
-          image={urlToImage}
+          image={imageUrl}
           alt="1"
         />
         <CardContent sx={{ height: 200 }}>
@@ -34,9 +34,9 @@ export default function ArticleItem({
               : title.props.children}
           </Typography>
           <Typography sx={{}} variant="body2" color="text.secondary">
-            {description.props.children.length > 100
-              ? description.props.children.slice(0, 101) + "..."
-              : description.props.children}
+            {summaryDesc.props.children.length > 100
+              ? summaryDesc.props.children.slice(0, 101) + "..."
+              : summaryDesc.props.children}
           </Typography>
         </CardContent>
         <CardActions>
@@ -45,8 +45,8 @@ export default function ArticleItem({
             style={{ textDecoration: "none" }}
             state={{
               titleText: titleText,
-              content: content,
-              urlToImage: urlToImage,
+              summary: summary,
+              imageUrl: imageUrl,
             }}
           >
             <Button color="secondary" variant="outlined" size="small">
