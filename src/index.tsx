@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 
 import { applyMiddleware, createStore } from "redux";
-import { Provider, useDispatch } from "react-redux";
+import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { IDefaultState, defaultState } from "./redux/reducers/articlesReducer";
 
