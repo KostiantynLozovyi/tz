@@ -1,5 +1,30 @@
-import { Button, Container, Paper, Typography } from "@mui/material";
+import {
+  Button,
+  Container,
+  Paper,
+  SxProps,
+  Theme,
+  Typography,
+} from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
+
+import "./style.scss";
+
+const styleContainer: SxProps<Theme> = {
+  position: "absolute",
+  top: 20,
+  left: "50%",
+  transform: "translate(-50%, 0)",
+};
+
+const stylePaper: SxProps<Theme> = {
+  marginTop: 10,
+  padding: 5,
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "flex-start",
+  alignItems: "center",
+};
 
 export default function ContentText() {
   const location = useLocation();
@@ -7,35 +32,9 @@ export default function ContentText() {
 
   return (
     <>
-      <img
-        style={{
-          width: "100%",
-          maxHeight: "200px",
-          objectFit: "cover",
-        }}
-        alt="1"
-        src={imageUrl}
-      />
-      <Container
-        sx={{
-          position: "absolute",
-          top: 20,
-          left: "50%",
-          transform: "translate(-50%, 0)",
-        }}
-      >
-        <Paper
-          sx={{
-            marginTop: 10,
-            padding: 5,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            alignItems: "center",
-          }}
-          variant="elevation"
-          elevation={3}
-        >
+      <img className="img_content_text" alt="image_content" src={imageUrl} />
+      <Container sx={styleContainer}>
+        <Paper sx={stylePaper} variant="elevation" elevation={3}>
           <Typography variant="h6">{titleText}</Typography>
           <Typography
             sx={{

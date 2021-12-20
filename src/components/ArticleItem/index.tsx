@@ -11,12 +11,18 @@ import { Link } from "react-router-dom";
 import { IArticleItem } from "../../types";
 
 export default function ArticleItem({
+  publishedAt,
   title,
   titleText,
   summaryDesc,
   imageUrl,
   summary,
 }: IArticleItem) {
+
+  const parseDate = publishedAt;
+  const newDate = new Date(parseDate);
+  const date = newDate.toDateString().substring(3);
+
   return (
     <Grid item xs={6} md={4}>
       <Card sx={{ maxWidth: 400 }}>
@@ -25,18 +31,24 @@ export default function ArticleItem({
           width="100"
           height="200"
           image={imageUrl}
-          alt="1"
+          alt="Card_img"
         />
         <CardContent sx={{ height: 200 }}>
+          <Typography
+            sx={{
+              color: "blue",
+            }}
+            variant="caption"
+          >
+            {date}
+          </Typography>
           <Typography gutterBottom variant="h5" component="div">
-            {title.props.children.length > 100
-              ? title.props.children.slice(0, 101) + "..."
-              : title.props.children}
+            {title.length > 100 ? title.slice(0, 101) + "..." : title}
           </Typography>
           <Typography sx={{}} variant="body2" color="text.secondary">
-            {summaryDesc.props.children.length > 100
-              ? summaryDesc.props.children.slice(0, 101) + "..."
-              : summaryDesc.props.children}
+            {summaryDesc.length > 100
+              ? summaryDesc.slice(0, 101) + "..."
+              : summaryDesc}
           </Typography>
         </CardContent>
         <CardActions>

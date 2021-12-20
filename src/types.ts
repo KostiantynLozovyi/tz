@@ -8,5 +8,5 @@ export interface IArticleItem {
   summary: string,
   summaryDesc: any;
   imageUrl: string;
-  content: string;
+  publishedAt: string;
 }

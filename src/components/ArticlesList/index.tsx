@@ -41,13 +41,13 @@ export default function ArticlesList() {
       <span>
         {parts
           .filter((part) => part)
-          .map((part: any, i: number) =>
-            regex.test(part) ? (
+          .map((part: any, i: number) => {
+            return regex.test(part) ? (
               <mark key={i}>{part}</mark>
             ) : (
               <span key={i}>{part}</span>
-            )
-          )}
+            );
+          })}
       </span>
     );
   };
@@ -78,12 +78,18 @@ export default function ArticlesList() {
             filteredData.map((item, index) => (
               <ArticleItem
                 key={index}
-                title={getHighlightedText(item.title, value)}
+                title={getHighlightedText(
+                  item.title.slice(0, 101) + "...",
+                  value
+                )}
                 titleText={item.title}
-                summaryDesc={getHighlightedText(item.summary, value)}
+                summaryDesc={getHighlightedText(
+                  item.summary.slice(0, 101) + "...",
+                  value
+                )}
                 summary={item.summary}
                 imageUrl={item.imageUrl}
-                content={item.content}
+                publishedAt={item.publishedAt}
               />
             ))
           )}
